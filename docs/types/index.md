@@ -5,7 +5,7 @@ hide_title: true
 
 # LPCDoc: Types
 
-LPCDoc supports type annotations to improve clarity in documentation. Types are used in `@param` and `@returns` tags to indicate expected values.
+LPCDoc supports type annotations to improve clarity in documentation. Types are used in `@type`, `@param`, and `@returns` tags to indicate expected values.
 
 ## Basic Types
 
