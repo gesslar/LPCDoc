@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Types Overview
 hide_title: true
 ---
 
