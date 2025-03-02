@@ -47,28 +47,6 @@ object find_entity(mixed value) {
 }
 ```
 
-## Arrays
-
-Arrays can be annotated using the array notation.
-
-### Annotation Usage
-
-```c
-/**
- * @param {string*} names - An array of player names.
- * @returns {int} The number of valid names.
- */
-int validate_names(string *names) {
-    int valid = 0;
-    foreach (string name in names) {
-        if (is_valid_name(name)) {
-            valid++;
-        }
-    }
-    return valid;
-}
-```
-
 ## Nested Composite Types
 
 More complex data structures can be documented using nested type annotations.
@@ -108,26 +86,6 @@ Tuples represent fixed-size collections of elements with potentially different t
 mixed *get_player_data() {
     object player = this_player();
     return ({ player->query_name(), player->query_age(), player });
-}
-```
-
-## Typed Arrays
-
-Arrays in LPC are ordered collections of elements, typically of the same type. They can be annotated using the `type*` notation.
-
-### Annotation Usage
-
-```c
-/**
- * @param {object*} players - An array of player objects.
- * @returns {string*} An array of player names.
- */
-string *get_player_names(object *players) {
-    string *names = ({});
-    foreach (object player in players) {
-        names += ({ player->query_name() });
-    }
-    return names;
 }
 ```
 

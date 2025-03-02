@@ -17,7 +17,6 @@ LPCDoc recognizes the following primitive types:
 - `object` - An instance of an LPC object.
 - `mapping` - A key-value data structure.
 - `mixed` - Represents a value that could be of any type.
-- `undefined` - Represents an undefined response.
 - `function` - Represents a function value.
 
 ## Composite Types

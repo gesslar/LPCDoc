@@ -18,6 +18,7 @@
 const sidebars = {
   docs: [
     "index",
+    "ide",
     {
       type: "category",
       label: "Type Annotations",

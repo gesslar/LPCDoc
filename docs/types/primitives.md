@@ -31,7 +31,7 @@ int calculate_total(int count) {
 /**
  * @param {mapping} registry - A mapping of player names to their ages.
  * @param {string} name - The name of the player.
- * @returns {int, undefined} - The age of the player, or undefined if not found.
+ * @returns {int, undefined} The age of the player, or undefined if not found.
  */
 int player_age(mapping registry, string name) {
     return registry[name];
@@ -192,38 +192,5 @@ Indicates a variable may contain **any** type.
  */
 mixed get_value() {
     return random(2) ? "text" : 42;
-}
-```
-
-## Undefined (`undefined`)
-
-Represents an undefined response, typically when accessing a non-existent key in a mapping or array element.
-
-### Annotation Usage
-
-```c
-/**
- * @param {mapping} data - A mapping of configuration values.
- * @param {string} key - The key to look up.
- * @returns {mixed, undefined} The value for the key, or undefined if not found.
- */
-mixed get_config_value(mapping data, string key) {
-    return data[key];
-}
-```
-
-## Void (`void`)
-
-Used for functions that do not return a value.
-
-### Annotation Usage
-
-```c
-/**
- * @param {string} message - The message to display.
- * @returns {void} This function does not return a value.
- */
-void display_message(string message) {
-    write(message);
 }
 ```
