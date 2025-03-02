@@ -1,0 +1,21 @@
+// Suggested document structure for LPCDoc
+
+docs/
+├── index.md                 // Main introduction
+├── types/                   // Types documentation directory
+│   ├── index.md             // Types overview
+│   ├── primitives.md        // Primitive types
+│   ├── composites.md        // Composite types (to be created)
+│   └── special.md           // Special types (to be created)
+├── tags/                    // Tags documentation directory
+│   ├── index.md             // Tags overview (to be created)
+│   ├── function-tags.md     // Function-related tags (to be created)
+│   ├── type-tags.md         // Type-related tags (to be created)
+│   └── metadata-tags.md     // Metadata-related tags (to be created)
+├── examples/                // Examples directory
+│   ├── index.md             // Examples overview (to be created)
+│   ├── basic.md             // Basic usage examples (to be created)
+│   └── advanced.md          // Advanced usage examples (to be created)
+└── integration/             // Integration guides
+    ├── index.md             // Integration overview (to be created)
+    └── tools.md             // Tools integration (to be created)

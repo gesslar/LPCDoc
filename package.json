@@ -1,0 +1,55 @@
+{
+  "name": "bedoc-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "deploy-win": ".\\.bin\\deploy.cmd",
+    "deploy-lin": "bash ./.bin/deplly.sh",
+    "inspect": "npx @eslint/config-inspector@latest"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@iconify/react": "^5.2.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.85.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.26.8",
+    "@babel/preset-react": "^7.26.3",
+    "@docusaurus/eslint-plugin": "^3.7.0",
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/types": "3.7.0",
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "docusaurus-plugin-sass": "^0.2.6"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}

@@ -1,0 +1,52 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:  # Allows manual deployment from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # Use the latest LTS version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Docusaurus
+        run: npm run build
+        env:
+          NODE_ENV: production
+          GITHUB_PAGES: true  # Enables GitHub Pages compatibility
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build  # Docusaurus outputs files here by default
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

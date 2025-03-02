@@ -1,2 +1,1 @@
-# lpdoc
-Markdown+ Documentation Generator from LPC Source Code
+Starting an LPCDoc page woohoo!

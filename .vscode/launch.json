@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Jekyll Server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/run.js",
+      "args": ["--host", "127.0.0.1", "--livereload"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "hidden": false,
+        "group": "build",
+        "order": 1
+      }
+    },
+    {
+      "name": "Build Jekyll Site",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/test.js",
+      "args": ["--config", "_config.yml"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "hidden": false,
+        "group": "build",
+        "order": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+ /* Variables */
+
+html {
+  transition: var(--ifm-transition-fast);
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #275050;
+  --ifm-color-primary-dark: #234848;
+  --ifm-color-primary-darker: #214444;
+  --ifm-color-primary-darkest: #1b3838;
+  --ifm-color-primary-light: #2b5858;
+  --ifm-color-primary-lighter: #2d5c5c;
+  --ifm-color-primary-lightest: #336868;
+  --ifm-background-color: #dce6f0;
+
+  --ifm-code-background: #6cb8ff !important;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #c0e2e4;
+  --ifm-color-primary-dark: #a3d4d7;
+  --ifm-color-primary-darker: #94ced1;
+  --ifm-color-primary-darkest: #68b9be;
+  --ifm-color-primary-light: #ddf0f1;
+  --ifm-color-primary-lighter: #ecf6f7;
+  --ifm-color-primary-lightest: #ffffff;
+  --ifm-background-color: #323c46;
+
+  --ifm-code-background: #3b5774 !important;
+}
+
+.main-wrapper {
+  max-width: 75%;
+  padding: 0 var(--ifm-spacing-horizontal);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar, .footer {
+  // backdrop-filter: blur(5px);
+  background-color: color-mix(in srgb, var(--ifm-background-color) 90%, transparent);
+  box-shadow: 0px 4px 10px color-mix(in srgb, var(--ifm-background-color) 50%, transparent);
+}
+
+html[data-theme='dark'] .navbar, .footer {
+  // backdrop-filter: blur(5px);
+  background-color: color-mix(in srgb, var(--ifm-background-color) 90%, transparent);
+  box-shadow: 0px 4px 10px color-mix(in srgb, var(--ifm-background-color) 50%, transparent);
+}
+
+:root .theme-code-block-highlighted-line,
+html[data-theme='dark'] .theme-code-block-highlighted-line {
+  background-color: rgba(33, 150, 243, .15); /* A nice blue at 20% opacity */
+}
+
+/** Icon **************************** */
+
+/* Define a reusable wiggle animation */
+@keyframes wiggle {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+/* Reusable wiggle class */
+.wiggle-hover:hover {
+  animation: wiggle 0.2s ease-in-out infinite alternate;
+}
+
+/* Default light mode */
+.halo-hover:hover {
+  animation: haloGrow 0.3s ease-out forwards;
+}
+
+@keyframes haloGrow {
+  0% { box-shadow: 0 0 0px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); }
+}
+
+/* Dark mode override */
+html[data-theme='dark'] .halo-hover:hover {
+  animation: haloGrowDark 0.3s ease-out forwards;
+}
+
+@keyframes haloGrowDark {
+  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
+}
+
+/* Base icon styling */
+.bedocs-icon {
+  display: inline-block;
+  width: var(--svg-icon-size, 24px);
+  height: var(--svg-icon-size, 24px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Shared Navbar Button Styles */
+.navbar-button {
+  @extend .bedocs-icon;
+  @extend .wiggle-hover;
+  @extend .halo-hover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--ifm-transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+/* Pseudo-element for dynamic icons */
+.bedocs-icon::before {
+  background-image: var(--svg-icon-url) !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+  display: block;
+  height: var(--svg-icon-size, 24px);
+  width: var(--svg-icon-size, 24px);
+  background-size: contain;
+  margin: auto;
+}
+
+/* Dark mode adjustments */
+html[data-theme='dark'] .bedocs-icon::before {
+  filter: invert(100%) brightness(85%);
+}
+
+/* Navbar-specific adjustments */
+.header--svg-link {
+  @extend .navbar-button;
+  display: flex; /* Ensures alignment */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--ifm-transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  padding: 8px; /* Ensure spacing inside */
+  width: 40px; /* Define a fixed width */
+  height: 40px; /* Define a fixed height */
+}
+
+/* Hover state */
+.header--svg-link:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
+/* Ensure icons in the navbar are always 24px */
+.header--svg-link::before {
+  height: 24px;
+  width: 24px;
+}
+
+/* Define icon sources */
+// .bedocs-icon[data-icon="github"]::before { --svg-icon-url: url("/img/line-md--github-loop.svg"); }
+// .bedocs-icon[data-icon="attribution"] { --svg-icon-url: url("/img/gg--attribution.svg"); }
+// .bedocs-icon[data-icon="discord"] { --svg-icon-url: url("/img/meteor-icons--discord.svg"); }
+// .bedocs-icon[data-icon="testimonials"] { --svg-icon-url: url("/img/hugeicons--promotion.svg"); }
+
+button[title*="Switch between dark and light mode"] {
+  @extend .wiggle-hover;
+  @extend .halo-hover;
+  display: flex; /* Ensures alignment */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--ifm-transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  padding: 8px; /* Ensure spacing inside */
+  width: 40px; /* Define a fixed width */
+  height: 40px; /* Define a fixed height */
+  vertical-align: middle;
+  margin-top: -4px; // aligns with navbar icons, don't mess with this unless needed!
+}
+
+/* CUSTOM */
+
+.pill {
+  background-color: var(--ifm-badge-background-color);
+  border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 65%;
+  font-weight: var(--ifm-font-weight-bold);
+  line-height: 1;
+  padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
+  // backdrop-filter: blur(5px);
+}
