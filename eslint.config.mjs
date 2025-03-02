@@ -12,12 +12,12 @@ export default [
   js.configs.recommended,
 
   {
-    name: "gesslar/bedocs/ignores",
+    name: "gesslar/lpcdoc/ignores",
     ignores: [".docusaurus/", "build/", "eslint.config.mjs"]
   },
   // Add Docusaurus plugin and recommended rules
   {
-    name: "gesslar/bedocs/docusaurus",
+    name: "gesslar/lpcdoc/docusaurus",
     plugins: {
       '@docusaurus': docusaurus,
     },

@@ -96,7 +96,7 @@ html[data-theme='dark'] .halo-hover:hover {
 }
 
 /* Base icon styling */
-.bedocs-icon {
+.lpcdoc-icon {
   display: inline-block;
   width: var(--svg-icon-size, 24px);
   height: var(--svg-icon-size, 24px);
@@ -107,7 +107,7 @@ html[data-theme='dark'] .halo-hover:hover {
 
 /* Shared Navbar Button Styles */
 .navbar-button {
-  @extend .bedocs-icon;
+  @extend .lpcdoc-icon;
   @extend .wiggle-hover;
   @extend .halo-hover;
   display: flex;
@@ -123,7 +123,7 @@ html[data-theme='dark'] .halo-hover:hover {
 }
 
 /* Pseudo-element for dynamic icons */
-.bedocs-icon::before {
+.lpcdoc-icon::before {
   background-image: var(--svg-icon-url) !important;
   background-repeat: no-repeat;
   background-position: center center;
@@ -136,7 +136,7 @@ html[data-theme='dark'] .halo-hover:hover {
 }
 
 /* Dark mode adjustments */
-html[data-theme='dark'] .bedocs-icon::before {
+html[data-theme='dark'] .lpcdoc-icon::before {
   filter: invert(100%) brightness(85%);
 }
 
@@ -166,10 +166,10 @@ html[data-theme='dark'] .bedocs-icon::before {
 }
 
 /* Define icon sources */
-// .bedocs-icon[data-icon="github"]::before { --svg-icon-url: url("/img/line-md--github-loop.svg"); }
-// .bedocs-icon[data-icon="attribution"] { --svg-icon-url: url("/img/gg--attribution.svg"); }
-// .bedocs-icon[data-icon="discord"] { --svg-icon-url: url("/img/meteor-icons--discord.svg"); }
-// .bedocs-icon[data-icon="testimonials"] { --svg-icon-url: url("/img/hugeicons--promotion.svg"); }
+// .lpcdoc-icon[data-icon="github"]::before { --svg-icon-url: url("/img/line-md--github-loop.svg"); }
+// .lpcdoc-icon[data-icon="attribution"] { --svg-icon-url: url("/img/gg--attribution.svg"); }
+// .lpcdoc-icon[data-icon="discord"] { --svg-icon-url: url("/img/meteor-icons--discord.svg"); }
+// .lpcdoc-icon[data-icon="testimonials"] { --svg-icon-url: url("/img/hugeicons--promotion.svg"); }
 
 button[title*="Switch between dark and light mode"] {
   @extend .wiggle-hover;
