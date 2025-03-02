@@ -19,3 +19,11 @@ docs/
 └── integration/             // Integration guides
     ├── index.md             // Integration overview (to be created)
     └── tools.md             // Tools integration (to be created)
+
+// Some other topics to cover - not sure where they fit yet:
+
+- Type predicates (in @returns)
+- Typedefs and their use in @param and @returns
+- @callback
+- @var
+- Additional primitives (struct/class) LD/Fluff-only types (lwobject, buffer)
