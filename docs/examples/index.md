@@ -65,6 +65,12 @@ int MAX_PLAYER_HP = 1000;
 mapping resistances = ([ "fire": 10, "cold": 5, "physical": 3 ]);
 ```
 
+## Expression Type Annotation
+
+```c
+object p = /** @type {"obj/player.c"} */(get_player());
+```
+
 ## Class or Module Documentation
 
 ```c

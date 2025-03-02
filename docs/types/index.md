@@ -5,7 +5,7 @@ hide_title: true
 
 # LPCDoc: Types
 
-LPCDoc supports type annotations to improve clarity in documentation. Types are used in `@param` and `@returns` tags to indicate expected values.
+LPCDoc supports type annotations to improve clarity in documentation. Types are used in `@type`, `@param`, and `@returns` tags to indicate expected values.
 
 ## Basic Types
 
@@ -24,9 +24,9 @@ LPCDoc recognizes the following primitive types:
 To indicate more complex types, or to provide more details, use:
 
 - `([ string: int ])` - A mapping where keys are strings and values are integers.
-- `([ string: int, undefined ])` - A mapping where the keys are strings, but the values may be int or undefined.
+- `([ string: int | undefined ])` - A mapping where the keys are strings, but the values may be int or undefined.
 - `([ string: int ])*` - An array of mappings where keys are strings and values are integers.
-- `int,string` - A union type, meaning the value could be an int or a string.
+- `int | string` - A union type, meaning the value could be an int or a string.
 - `({ "/std/weapon.c", "/std/room.c" })` - A tuple of objects, prototyped as a weapon and a room.
 
 ## Special Cases

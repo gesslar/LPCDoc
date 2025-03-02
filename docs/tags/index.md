@@ -17,6 +17,7 @@ LPCDoc tags can be broadly categorized into several groups:
 These tags document information about functions:
 
 - `@param` - Documents a function parameter.
+- `@callback` - Documents a function passed as an argument to another function.
 - `@returns` - Documents the return value of a function.
 - `@throws` - Documents exceptions that may be thrown.
 - `@errors` - Documents potential error conditions.
@@ -25,8 +26,9 @@ These tags document information about functions:
 
 These tags add type information:
 
-- `@type` - Documents the type of a variable.
+- `@type` - Documents the type of a variable or expression.
 - `@typedef` - Creates a reusable type definition.
+- `@var` - Documents the type of an inherited variable.
 
 ### Metadata Tags
 

@@ -30,13 +30,13 @@ int calculate_total_score(mapping scores) {
 
 ## Union Types
 
-Union types indicate that a value could be one of several specified types, separated by commas.
+Union types indicate that a value could be one of several specified types, separated by the pipe (`|`) character.
 
 ### Annotation Usage
 
 ```c
 /**
- * @param {int,string} value - Either a numeric ID or a string name.
+ * @param {int | string} value - Either a numeric ID or a string name.
  * @returns {object} The found entity.
  */
 object find_entity(mixed value) {

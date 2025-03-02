@@ -97,6 +97,12 @@ mixed *get_mixed_data() {
 
 An object refers to an instance of an LPC file. It can be annoted as simply `{object}`.
 
+A _named object_ reference can be documented with the full path to the expected object or blueprint file. 
+This can be done by enclosing the path in quotes (e.g. `{"/path/to/object.c"}`), 
+or by using LD's named object syntax (e.g. `{object "/path/to/object.c"}`).
+
+The file extensions (`.c`) are optional, but can be included for clarity.
+
 ### Annotation Usage
 
 ```c
