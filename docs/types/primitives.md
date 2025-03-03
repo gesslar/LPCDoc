@@ -119,7 +119,8 @@ object get_player() {
 }
 ```
 
-Or, you can provide more information about what kind of object it is, by instead putting the full path to the object enclosed in quotes.
+Or, you can provide more information about what kind of object it is, by
+instead putting the full path to the object enclosed in quotes.
 
 ```c
 /**
@@ -178,16 +179,62 @@ buffer create_buffer(int size) {
 
 ## Class/Struct (`class`/`struct`)
 
-A structured data type that groups values together.
+Classes and structs are structured data types that group related values
+together. When documenting classes, use the `@typedef` tag to define the class
+structure and its properties.
 
 ### Annotation Usage
 
+For class definitions:
+
 ```c
 /**
- * @returns {class} An instance of the data structure.
+ * @typedef {class} ShopItem - Represents a purchasable item in the TC shop
+ *
+ * @property {string} short - Display name shown in shop menus
+ * @property {string} file - Full path to the item's source file
+ * @property {int} cost - Purchase price in ThreshCredits
+ * @property {int} stock - Current quantity available for purchase
+ * @property {string} info - Reference to additional item description file
+ *
+ * The info file contains detailed item descriptions, special features,
+ * and any usage instructions. These files are stored in the shop's
+ * info directory structure.
  */
-class Example get_example() {
-  return new(class Example);
+class ShopItem {
+  string short;
+  string file;
+  int cost;
+  int stock;
+  string info;
+}
+```
+
+For variables or returns that use the class:
+
+```c
+/**
+ * @returns {class ShopItem} A new shop item instance
+ */
+class ShopItem create_item() {
+  return new(class ShopItem,
+    short: "Magic Sword",
+    file: "/items/weapon/sword.c",
+    cost: 100,
+    stock: 5,
+    info: "magic_sword.txt"
+  );
+}
+```
+
+For arrays of class instances:
+
+```c
+/**
+ * @returns {class ShopItem*} An array of available shop items
+ */
+class ShopItem *get_available_items() {
+  return filter(all_items, (: $1->stock > 0 :));
 }
 ```
 
