@@ -27,7 +27,6 @@ These tags document information about functions:
 These tags add type information:
 
 - `@type` - Documents the type of a variable or expression.
-- `@typedef` - Creates a reusable type definition.
 - `@var` - Documents the type of an inherited variable.
 
 ### Metadata Tags

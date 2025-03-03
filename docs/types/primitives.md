@@ -180,8 +180,8 @@ buffer create_buffer(int size) {
 ## Class/Struct (`class`/`struct`)
 
 Classes and structs are structured data types that group related values
-together. When documenting classes, use the `@typedef` tag to define the class
-structure and its properties.
+together. When documenting a class/struct, include a **description** at the top
+and define all of its properties using the `@property` tag.
 
 ### Annotation Usage
 
@@ -189,7 +189,9 @@ For class definitions:
 
 ```c
 /**
- * @typedef {class} ShopItem - Represents a purchasable item in the TC shop
+ * The info file contains detailed item descriptions, special features,
+ * and any usage instructions. These files are stored in the shop's
+ * info directory structure.
  *
  * @property {string} short - Display name shown in shop menus
  * @property {string} file - Full path to the item's source file
@@ -197,9 +199,6 @@ For class definitions:
  * @property {int} stock - Current quantity available for purchase
  * @property {string} info - Reference to additional item description file
  *
- * The info file contains detailed item descriptions, special features,
- * and any usage instructions. These files are stored in the shop's
- * info directory structure.
  */
 class ShopItem {
   string short;

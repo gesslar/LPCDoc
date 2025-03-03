@@ -194,14 +194,14 @@ Tuples are represented as arrays with the member types within:
 ### Classes
 
 Classes should be documented using @typedef to describe both the class and its properties:
+
 ```c
 /**
- * @typedef {class} ClassName - Brief description of class purpose
+ * Class-level details or usage notes can go here if needed.
  *
  * @property {type} propertyName - Description of this property
  * @property {type} anotherProp - Description of this property
  *
- * Additional class-level details or usage notes can go here if needed.
  */
 class ClassName {
     // Implementation
@@ -209,11 +209,10 @@ class ClassName {
 ```
 
 Key points for class documentation:
-- Use @typedef with {class} type specifier
 - Document each property with @property tags
 - Include property types in curly braces
 - Add descriptions for both class and properties
-- Optional additional paragraph for implementation details
+- Optional additional paragraph for implementation details at the top
 
 ## Practical Guidelines
 
@@ -246,4 +245,39 @@ Key points for class documentation:
  *     write("Could only move " + moved + " coins.");
  * }
  */
+```
+
+## Function/Variable Visibility
+
+Visibility modifiers should be the first tag, if proper inference can be made
+or specific modifier is provided. @public, @protected, @private. Any other
+modifiers are not required at this time (nomask, varargs, etc).
+
+Unless otherwise noted, functions and variables have public visibility by
+default. However, there is a unique case where you can affect a function's or
+variable's visibility and that is a visibility tag. For example:
+
+```c
+// Inferred public because they do not have any visibility tags
+// and there are no preceeding global tags.
+void func1(); // public <- inferred public
+string var1(); // public <- inferred public
+
+// Until otherwise specified, everything from this point below is protected
+protected:
+
+void func2(); // protected
+string var2(); // protected
+
+// Until otherwise specified, everything from this point below is private
+private:
+
+void func3(); // private
+string var3(); // private
+
+// Until otherwise specified, everything from this point below is public
+public:
+
+void func4(); // public
+string var4(); // public
 ```

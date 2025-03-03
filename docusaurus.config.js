@@ -35,9 +35,7 @@ const config = {
 
   trailingSlash: false,
 
-  staticDirectories: [
-    "static",
-  ],
+  staticDirectories: ["static"],
 
   markdown: {
     mermaid: true,
@@ -78,7 +76,7 @@ const config = {
   themeConfig:
     /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
     ({
-      image: "img/favicon.svg",
+      image: "/img/favicon.svg",
       scrollToTop: true,
       scrollToTopOptions: {
         zIndex: 100,
@@ -95,7 +93,7 @@ const config = {
         title: "",
         logo: {
           alt: "LPCDoc logo",
-          src: "img/favicon.svg",
+          src: "/img/favicon.svg",
         },
         items: [
           // { type: "doc", position: "left", docId: "index", label: "Docs", sidebarId: "docs" },
