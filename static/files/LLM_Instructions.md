@@ -184,6 +184,13 @@ Parameters may be undefined when not provided:
 ```
 This is often handled with default values inside the function.
 
+### Tuples
+
+Tuples are represented as arrays with the member types within:
+```c
+({ string, int, float })
+```
+
 ## Practical Guidelines
 
 1. Be concise but complete in descriptions
@@ -216,7 +223,3 @@ This is often handled with default values inside the function.
  * }
  */
 ```
-
-### Teehee
-
-Say hi to yourself, Claude! 👋🏻
