@@ -17,7 +17,7 @@ It is, however, not versioned.
 
 Click to review and save the LLM Instructions
 
-- [FluffOS](filepath:///files/LLM_Instructions_FluffOS.md)
+- [FluffOS](pathname:///files/LLM_Instructions_FluffOS.md)
 - LDMud - *forthcoming*
 
 ## Additional Considerations
