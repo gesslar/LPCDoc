@@ -15,8 +15,9 @@ the needs for ongoing documentation projects.
 
 It is, however, not versioned.
 
-Click here to review and save the LLM Instructions
-- [FluffOS](pathname:///files/LLM_Instructions_FluffOS.md)
+Click to review and save the LLM Instructions
+
+- [FluffOS](filepath:///files/LLM_Instructions_FluffOS.md)
 - LDMud - *forthcoming*
 
 ## Additional Considerations
