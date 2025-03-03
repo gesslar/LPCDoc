@@ -1,13 +1,15 @@
 ---
 title: Primitives
 hide_title: true
-toc_min_heading_level: 2
 toc_max_heading_level: 2
 ---
 
+<!-- import {FluffOS,LDMud} from "@site/src/components/Badge" -->
+
 # LPCDoc: Primitives
 
-This section describes the primitive types available in LPC and how to document them using LPCDoc annotations.
+This section describes the primitive types available in LPC and how to document
+them using LPCDoc annotations.
 
 ## Integer (`int`)
 
@@ -21,11 +23,13 @@ An integer is a whole number, either positive or negative.
  * @returns {int} The total value.
  */
 int calculate_total(int count) {
-    return count * 10;
+  return count * 10;
 }
 ```
 
-**NB**: It should be mentioned that if a value could be undefined, while it is `0` in all senses of the definition, it does merit specific annotation as `undefined`.
+**NB**: It should be mentioned that if a value could be undefined, while it is
+`0` in all senses of the definition, it does merit specific annotation as
+`undefined`.
 
 ```c
 /**
@@ -34,7 +38,7 @@ int calculate_total(int count) {
  * @returns {int, undefined} The age of the player, or undefined if not found.
  */
 int player_age(mapping registry, string name) {
-    return registry[name];
+  return registry[name];
 }
 ```
 
@@ -50,7 +54,7 @@ A floating-point number represents real numbers with decimal precision.
  * @returns {float} The computed value.
  */
 float compute_interest(float rate) {
-    return rate * 1.05;
+  return rate * 1.05;
 }
 ```
 
@@ -66,7 +70,7 @@ A string is a sequence of characters.
  * @returns {string} A greeting message.
  */
 string greet(string name) {
-    return "Hello, " + name + "!";
+  return "Hello, " + name + "!";
 }
 ```
 
@@ -82,14 +86,14 @@ An array is an ordered collection of values, which can be of any type.
  * @returns {int} The number of names.
  */
 int count_names(string *names) {
-    return sizeof(names);
+  return sizeof(names);
 }
 
 /**
  * @returns {mixed*} An array containing various types of values.
  */
 mixed *get_mixed_data() {
-    return ({ "text", 42, this_object() });
+  return ({ "text", 42, this_object() });
 }
 ```
 
@@ -97,9 +101,10 @@ mixed *get_mixed_data() {
 
 An object refers to an instance of an LPC file. It can be annoted as simply `{object}`.
 
-A _named object_ reference can be documented with the full path to the expected object or blueprint file. 
-This can be done by enclosing the path in quotes (e.g. `{"/path/to/object.c"}`), 
-or by using LD's named object syntax (e.g. `{object "/path/to/object.c"}`).
+A _named object_ reference can be documented with the full path to the expected
+object or blueprint file. This can be done by enclosing the path in quotes
+(e.g. `{"/path/to/object.c"}`), or by using LD's named object syntax (e.g.
+`{object "/path/to/object.c"}`).
 
 The file extensions (`.c`) are optional, but can be included for clarity.
 
@@ -110,7 +115,7 @@ The file extensions (`.c`) are optional, but can be included for clarity.
  * @returns {object} A reference to the player's object.
  */
 object get_player() {
-    return this_player();
+  return this_player();
 }
 ```
 
@@ -121,7 +126,7 @@ Or, you can provide more information about what kind of object it is, by instead
  * @returns {"/std/player.c"} A reference to the player's object.
  */
 object get_player() {
-    return this_player();
+  return this_player();
 }
 ```
 
@@ -136,7 +141,7 @@ A key-value data structure.
  * @returns {mapping} A mapping of configuration settings.
  */
 mapping get_config() {
-    return ([ "max_hp": 100, "regen_rate": 5 ]);
+  return ([ "max_hp": 100, "regen_rate": 5 ]);
 }
 ```
 
@@ -151,7 +156,7 @@ Represents a callable function reference.
  * @returns {function} A function reference for callbacks.
  */
 function get_callback() {
-    return (: write, "Callback executed!" :);
+  return (: write, "Callback executed!" :);
 }
 ```
 
@@ -167,11 +172,11 @@ A binary data buffer for efficient byte manipulation.
  * @returns {buffer} A new buffer of the specified size.
  */
 buffer create_buffer(int size) {
-    return allocate_buffer(size);
+  return allocate_buffer(size);
 }
 ```
 
-## Class (`class`)
+## Class/Struct (`class`/`struct`)
 
 A structured data type that groups values together.
 
@@ -182,7 +187,7 @@ A structured data type that groups values together.
  * @returns {class} An instance of the data structure.
  */
 class Example get_example() {
-    return new(class Example);
+  return new(class Example);
 }
 ```
 
@@ -197,6 +202,6 @@ Indicates a variable may contain **any** type.
  * @returns {mixed} A value that could be any type.
  */
 mixed get_value() {
-    return random(2) ? "text" : 42;
+  return random(2) ? "text" : 42;
 }
 ```

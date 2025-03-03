@@ -1,7 +1,6 @@
 ---
 title: IDE Integration
 hide_title: true
-toc_min_heading_level: 2
 toc_max_heading_level: 2
 ---
 
@@ -19,7 +18,8 @@ comments.
 
 ### Features
 
-When using LPCDoc comments with the LPC Language Services extension, you gain access to:
+When using LPCDoc comments with the LPC Language Services extension, you gain
+access to:
 
 - **IntelliSense and Code Completion** - Type information from LPCDoc comments
   is used to provide better suggestions
