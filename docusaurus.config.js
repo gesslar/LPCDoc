@@ -35,6 +35,10 @@ const config = {
 
   trailingSlash: false,
 
+  staticDirectories: [
+    "static",
+  ],
+
   markdown: {
     mermaid: true,
   },

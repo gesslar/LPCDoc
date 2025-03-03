@@ -49,6 +49,7 @@ const sidebars = {
         "examples/index",
       ]
     },
+    "llm",
   ],
 };
 
