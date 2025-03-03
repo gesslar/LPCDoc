@@ -157,7 +157,7 @@ For function references with signature:
 ```
 Example: `{function(int, int): int}`
 
-## Special Notations
+### Special Notations
 
 ### Optional Parameters
 For optional parameters:
@@ -190,6 +190,30 @@ Tuples are represented as arrays with the member types within:
 ```c
 ({ string, int, float })
 ```
+
+### Classes
+
+Classes should be documented using @typedef to describe both the class and its properties:
+```c
+/**
+ * @typedef {class} ClassName - Brief description of class purpose
+ *
+ * @property {type} propertyName - Description of this property
+ * @property {type} anotherProp - Description of this property
+ *
+ * Additional class-level details or usage notes can go here if needed.
+ */
+class ClassName {
+    // Implementation
+}
+```
+
+Key points for class documentation:
+- Use @typedef with {class} type specifier
+- Document each property with @property tags
+- Include property types in curly braces
+- Add descriptions for both class and properties
+- Optional additional paragraph for implementation details
 
 ## Practical Guidelines
 
